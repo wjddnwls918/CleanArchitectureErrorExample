@@ -3,6 +3,7 @@ package com.example.basetest.common
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
+// presentation layer module
 open class Event<out T>(private val content: T) {
 
     var hasBeenHandled = false

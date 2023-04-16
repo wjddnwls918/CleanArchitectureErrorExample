@@ -10,6 +10,7 @@ import com.example.basetest.error.ErrorException
 import com.example.basetest.error.ErrorType
 import kotlinx.coroutines.CoroutineExceptionHandler
 
+// presentation layer module
 open class BaseViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _errorEvent = MutableLiveData<Event<ErrorType>>()
@@ -28,7 +29,7 @@ open class BaseViewModel(application: Application) : AndroidViewModel(applicatio
                 _errorEvent.value = Event(ErrorType.Network)
             }
             else -> {
-                _errorEvent.value = Event(ErrorType.Common)
+                _errorEvent.value = Event(ErrorType.Unknown)
             }
         }
     }

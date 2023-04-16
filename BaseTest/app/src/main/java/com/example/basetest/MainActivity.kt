@@ -3,8 +3,8 @@ package com.example.basetest
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.basetest.base.BaseActivity
-import com.example.basetest.error.ErrorHandler
 
+// presentation layer module
 class MainActivity : BaseActivity<MainViewModel>() {
 
     override val viewModel: MainViewModel by viewModels()
@@ -19,16 +19,5 @@ class MainActivity : BaseActivity<MainViewModel>() {
         initErrorObserve()
         //에러발생
         viewModel.apiTest()
-    }
-
-
-    private fun initErrorObserve() {
-        viewModel.errorEvent.observe(
-            this
-        ) {
-            it.getContentIfNotHandled()?.let { errorType ->
-                ErrorHandler.handleErrorByErrorType(errorType)
-            }
-        }
     }
 }
