@@ -19,6 +19,7 @@ open class BaseViewModel(application: Application) : AndroidViewModel(applicatio
 
     //에러 캐치
     open val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+        Log.d("### context check", "coroutine context : $coroutineContext")
         Log.d("error arrived", "error : $throwable")
         // 예외에 따라 에러유형 설정
         when (throwable) {
