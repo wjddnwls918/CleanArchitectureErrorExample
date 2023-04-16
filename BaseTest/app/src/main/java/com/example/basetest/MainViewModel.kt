@@ -13,6 +13,7 @@ import java.io.IOException
 class MainViewModel(application: Application) :BaseViewModel(application) {
     fun apiTest() {
         viewModelScope.launch(coroutineExceptionHandler) {
+            // change hilt injection
             ExampleUseCase()()
         }
     }

@@ -12,7 +12,7 @@ abstract class BaseActivity <R : BaseViewModel> : AppCompatActivity() {
             this
         ) {
             it.getContentIfNotHandled()?.let { errorType ->
-                ErrorHandler.handleErrorByErrorType(errorType)
+                ErrorHandler.handleErrorByErrorType(this, errorType)
             }
         }
     }
